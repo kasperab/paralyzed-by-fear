@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Saw,Circular,Porter-Cable,315,7 1 4 inch blade,16 tooth,On,Cut,Plywood,Off.wav-7b500e1f33f2f5ccd0f44f30972deef2.sample"
+
+[deps]
+
+source_file="res://player/Saw,Circular,Porter-Cable,315,7 1 4 inch blade,16 tooth,On,Cut,Plywood,Off.wav"
+dest_files=[ "res://.import/Saw,Circular,Porter-Cable,315,7 1 4 inch blade,16 tooth,On,Cut,Plywood,Off.wav-7b500e1f33f2f5ccd0f44f30972deef2.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

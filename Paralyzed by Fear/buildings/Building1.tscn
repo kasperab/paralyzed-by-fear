@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://buildings/building1.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://buildings/base.tres" type="Material" id=2]
+[ext_resource path="res://buildings/ring1.tres" type="Material" id=3]
+[ext_resource path="res://forest/ID.gd" type="Script" id=4]
+
+[sub_resource type="SphereShape" id=1]
+radius = 2.0
+
+[node name="Building1" type="Spatial"]
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = ExtResource( 1 )
+material/0 = ExtResource( 2 )
+material/1 = ExtResource( 3 )
+material/2 = ExtResource( 3 )
+material/3 = ExtResource( 2 )
+
+[node name="InterestingBody" type="StaticBody" parent="."]
+script = ExtResource( 4 )
+id = 1
+canExplode = false
+
+[node name="CollisionShape" type="CollisionShape" parent="InterestingBody"]
+shape = SubResource( 1 )

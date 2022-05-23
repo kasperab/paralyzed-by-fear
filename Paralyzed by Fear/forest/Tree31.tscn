@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://forest/alientree3.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://forest/green.tres" type="Material" id=2]
+[ext_resource path="res://forest/black.tres" type="Material" id=3]
+[ext_resource path="res://forest/ID.gd" type="Script" id=4]
+
+[sub_resource type="SphereShape" id=1]
+
+[node name="Tree30" type="Spatial"]
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = ExtResource( 1 )
+material/0 = ExtResource( 2 )
+material/1 = ExtResource( 3 )
+
+[node name="ScaryBody" type="StaticBody" parent="."]
+script = ExtResource( 4 )
+id = 31
+
+[node name="CollisionShape" type="CollisionShape" parent="ScaryBody"]
+shape = SubResource( 1 )

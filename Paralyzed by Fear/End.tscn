@@ -1,0 +1,84 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://player/Astronaut.tscn" type="PackedScene" id=1]
+[ext_resource path="res://player/Saw,Circular,Porter-Cable,315,7 1 4 inch blade,16 tooth,On,Cut,Plywood,Off.wav" type="AudioStream" id=2]
+[ext_resource path="res://End.gd" type="Script" id=3]
+[ext_resource path="res://player/RocketShip.obj" type="ArrayMesh" id=5]
+[ext_resource path="res://player/RocketShip_BaseColor.png" type="Texture" id=6]
+[ext_resource path="res://ui/fog.png" type="Texture" id=7]
+[ext_resource path="res://forest/ground.obj" type="ArrayMesh" id=10]
+[ext_resource path="res://forest/ground.tres" type="Material" id=11]
+[ext_resource path="res://player/Desert Soundscape - Wind - Loop.wav" type="AudioStream" id=29]
+[ext_resource path="res://buildings/DD Whirring Spirals.wav" type="AudioStream" id=30]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_texture = ExtResource( 6 )
+
+[node name="End" type="Spatial"]
+script = ExtResource( 3 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.573576, 0.819152, 0, -0.819152, 0.573576, 0, 15, -70 )
+cull_mask = 2148532223
+current = true
+
+[node name="ground" type="MeshInstance" parent="."]
+transform = Transform( 15, 0, 0, 0, 1, 0, 0, 0, 15, 0, 0, 0 )
+mesh = ExtResource( 10 )
+material/0 = ExtResource( 11 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color( 0.333333, 0.333333, 0.333333, 0.501961 )
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ambience" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 29 )
+volume_db = -20.0
+autoplay = true
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 30 )
+volume_db = -5.0
+autoplay = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+volume_db = -10.0
+autoplay = true
+
+[node name="One" type="Spatial" parent="."]
+
+[node name="Rocket" type="MeshInstance" parent="One"]
+transform = Transform( -0.907821, -0.419357, 0, 0.399552, -0.864948, 0.303684, -0.127352, 0.275691, 0.952773, -2.39653, 10.9012, -84.8642 )
+mesh = ExtResource( 5 )
+material/0 = SubResource( 1 )
+
+[node name="Astronaut" parent="One" instance=ExtResource( 1 )]
+transform = Transform( -24.7371, 0, -96.8921, 0, 100, 0, 96.8921, 0, -24.7371, -0.948775, 0, -79.2642 )
+
+[node name="Two" type="Spatial" parent="."]
+visible = false
+
+[node name="Rocket" type="MeshInstance" parent="Two"]
+transform = Transform( 0.0232805, -0.999729, 0, 0.999729, 0.0232805, 0, 0, 0, 1, 4.68527, 1.91954, -84.8642 )
+mesh = ExtResource( 5 )
+material/0 = SubResource( 1 )
+
+[node name="Astronaut" parent="Two" instance=ExtResource( 1 )]
+transform = Transform( -4.23988, 0, -99.9101, 0, 100, 0, 99.9101, 0, -4.23988, 4.65435, 0, -83.554 )
+
+[node name="Three" type="Spatial" parent="."]
+visible = false
+
+[node name="Rocket" type="MeshInstance" parent="Three"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -80 )
+mesh = ExtResource( 5 )
+material/0 = SubResource( 1 )
+
+[node name="Astronaut" parent="Three" instance=ExtResource( 1 )]
+transform = Transform( -44.7853, 0, 89.4107, 0, 100, 0, -89.4107, 0, -44.7853, -4.68162, 9.53674e-07, -80.1347 )

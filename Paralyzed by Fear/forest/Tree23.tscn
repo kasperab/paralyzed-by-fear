@@ -1,0 +1,37 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://forest/alientree2.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://forest/black.tres" type="Material" id=2]
+[ext_resource path="res://forest/white.tres" type="Material" id=3]
+[ext_resource path="res://forest/ID.gd" type="Script" id=4]
+[ext_resource path="res://forest/yellow.tres" type="Material" id=6]
+[ext_resource path="res://forest/purple.tres" type="Material" id=7]
+
+[sub_resource type="SphereShape" id=1]
+
+[node name="Tree20" type="Spatial"]
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = ExtResource( 1 )
+material/0 = ExtResource( 3 )
+material/1 = ExtResource( 6 )
+material/2 = ExtResource( 6 )
+material/3 = ExtResource( 7 )
+material/4 = ExtResource( 7 )
+material/5 = ExtResource( 3 )
+material/6 = ExtResource( 6 )
+material/7 = ExtResource( 3 )
+material/8 = ExtResource( 7 )
+material/9 = ExtResource( 7 )
+material/10 = ExtResource( 6 )
+material/11 = ExtResource( 7 )
+material/12 = ExtResource( 3 )
+material/13 = ExtResource( 2 )
+material/14 = ExtResource( 2 )
+
+[node name="InterestingBody" type="StaticBody" parent="."]
+script = ExtResource( 4 )
+id = 23
+
+[node name="CollisionShape" type="CollisionShape" parent="InterestingBody"]
+shape = SubResource( 1 )
